@@ -1,5 +1,8 @@
 package ru.qa.ft.sandbox;
 
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
+
 public class MyProgram {
 
 	public static void main (String[] arg) {
@@ -7,23 +10,14 @@ public class MyProgram {
 		hello("user");
 		hello("Elena");
 
-		double l = 3;
-		System.out.println("Площадь квадрата со стороной " + l + " = " + area(l));
+		Square s = new Square(5);
+		System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
 
-		double a = 4;
-		double b = 5;
-		System.out.println("Площадь прямоугольника со сторонами " + a + " и " + b + " = " + area(a, b));
-	}
+		Rectangle r = new Rectangle(4,6);
+		System.out.println("Площадь прямоугольника со сторонами " + r.a + " и " + r.b + " = " + r.area());
+}
 
 	public static void hello (String object) {
 		System.out.println("Hello, " + object + "!");
-	}
-
-	public static double area (double l) {
-		return l * l;
-	}
-
-	public static double area (double a, double b) {
-		return a * b;
 	}
 }
