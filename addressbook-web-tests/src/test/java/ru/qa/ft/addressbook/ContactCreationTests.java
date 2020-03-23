@@ -26,7 +26,7 @@ public class ContactCreationTests {
   }
 
   @Test
-  public void testContactCreationTests() throws Exception {
+  public void testContactCreation() throws Exception {
     goToAddNewContactPage();
     fillContactForm(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home"));
     submitContactCreation();
