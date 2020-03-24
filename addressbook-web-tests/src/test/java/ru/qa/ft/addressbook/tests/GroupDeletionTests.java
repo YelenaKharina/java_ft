@@ -1,17 +1,15 @@
 package ru.qa.ft.addressbook.tests;
 
-import org.testng.annotations.*;
-import org.openqa.selenium.*;
-import ru.qa.ft.addressbook.tests.TestBase;
+import org.testng.annotations.Test;
 
 public class GroupDeletionTests extends TestBase {
 
   @Test
   public void testGroupDeletionTests() throws Exception {
-    app.goToGroupPage();
+    app.getNavigationHelper().goToGroupPage();
     app.selectElement();
-    app.deleteSelectedGroups();
-    app.returnToGroupPage();
+    app.getGroupHelper().deleteSelectedGroups();
+    app.getGroupHelper().returnToGroupPage();
   }
 
 }
