@@ -8,7 +8,7 @@ public class ContactDeletionTests extends TestBase {
 
   @Test
   public void testContactDeletion() throws Exception {
-    app.selectContact();
+    app.selectElement();
     app.deleteSelectedContacts();
     assertTrue(app.closeAlertAndGetItsText().matches("^Delete 1 addresses[\\s\\S]$"));
     app.returnToHomePage();

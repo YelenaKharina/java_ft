@@ -1,5 +1,7 @@
 package ru.qa.ft.addressbook.tests;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.qa.ft.addressbook.appmanager.ApplicationManager;
