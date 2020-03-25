@@ -1,12 +1,10 @@
 package ru.qa.ft.addressbook.appmanager;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.qa.ft.addressbook.module.ContactData;
 
 public class ContactHelper extends BaseHelper {
-  private boolean acceptNextAlert = true;
 
   public ContactHelper(FirefoxDriver wd) {
     super (wd);
