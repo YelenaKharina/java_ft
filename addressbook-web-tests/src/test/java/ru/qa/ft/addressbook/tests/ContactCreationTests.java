@@ -8,7 +8,7 @@ public class ContactCreationTests extends TestBase {
   @Test
   public void testContactCreation() throws Exception {
     app.getNavigationHelper().goToAddNewContactPage();
-    app.getContactHelper().fillContactForm(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home"));
+    app.getContactHelper().fillContactForm(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home", "name1"), true);
     app.getContactHelper().submitContactCreation();
     app.getNavigationHelper().returnToHomePage();
   }
