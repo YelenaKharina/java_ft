@@ -10,7 +10,7 @@ public class GroupModificationTests extends TestBase {
     app.getNavigationHelper().goToGroupPage();
     //проверка существования групп, при отсутствии группа создается
     if (! app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup(new GroupData("name", "hearder", "footer"));
+      app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
     }
     app.getNavigationHelper().selectElement();
     app.getGroupHelper().initGroupModification();
