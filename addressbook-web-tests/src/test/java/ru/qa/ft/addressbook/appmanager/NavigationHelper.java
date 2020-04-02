@@ -24,4 +24,8 @@ public class NavigationHelper extends BaseHelper {
   public void selectElement() {
     click(By.name("selected[]"));
   }
+
+  public boolean isThereAElement() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }

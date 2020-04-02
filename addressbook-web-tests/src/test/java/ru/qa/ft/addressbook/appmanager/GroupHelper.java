@@ -46,8 +46,4 @@ public class GroupHelper extends BaseHelper {
     submitGroupCreation();
     returnToGroupPage();
   }
-
-  public boolean isThereAGroup() {
-    return isElementPresent(By.name("selected[]"));
-  }
 }

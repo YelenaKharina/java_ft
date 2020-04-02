@@ -9,12 +9,11 @@ public class GroupDeletionTests extends TestBase {
   public void testGroupDeletionTests() throws Exception {
     app.getNavigationHelper().goToGroupPage();
     //проверка существования групп, при отсутствии группа создается
-    if (! app.getGroupHelper().isThereAGroup()) {
+    if (! app.getNavigationHelper().isThereAElement()) {
       app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
     }
     app.getNavigationHelper().selectElement();
     app.getGroupHelper().deleteSelectedGroups();
     app.getGroupHelper().returnToGroupPage();
   }
-
 }
