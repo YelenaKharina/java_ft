@@ -9,27 +9,6 @@ public class NavigationHelper extends BaseHelper {
     super(wd);
   }
 
-  public void returnToHomePage() {
-    //проверяем наличие таблицы
-    //если выполняется, то выполняем выход из метода
-    //если нет, то совершаем клик для перехода на домашнюю страницу
-    if (isElementPresent(By.id("maintable"))) {
-      return;
-    }
-    click(By.linkText("home"));
-  }
-
-  public void goToAddNewContactPage() {
-    //проверяем наличие заголовка и имя заголовка для создания нового контакта
-    //если выполняется, то выполняем выход из метода
-    //если нет, то совершаем клик для перехода на страницу создания контакта
-    if (isElementPresent(By.tagName("h1"))
-            && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")) {
-      return;
-    }
-    click(By.linkText("add new"));
-  }
-
   public void goToGroupPage() {
     //проверяем наличие заголовка, имя заголовка и наличие кнопки создания новой группы
     //если выполняется, то выполняем выход из метода
