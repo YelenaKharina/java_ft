@@ -1,5 +1,6 @@
 package ru.qa.ft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.qa.ft.addressbook.module.ContactData;
 
@@ -11,10 +12,13 @@ public class ContactModificationTests extends TestBase {
     if (! app.getNavigationHelper().isThereAElement()) {
       app.getContactHelper().createContact(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home", "name1"), true);
     }
-    app.getNavigationHelper().selectElement();
+    int before = app.getNavigationHelper().getElementCount();
+    app.getNavigationHelper().selectElement(0);
     app.getContactHelper().initContactModification();
     app.getContactHelper().fillContactForm(new ContactData("firstname1", "middlename1", "lastname1", "address1", "email1", "home1", null), false);
     app.getContactHelper().submitContactModification();
     app.getContactHelper().returnToHomePage();
+    int after = app.getNavigationHelper().getElementCount();
+    Assert.assertEquals(after, before + 1);
   }
 }

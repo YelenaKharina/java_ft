@@ -9,9 +9,10 @@ public class GroupCreationTests extends TestBase {
   @Test
   public void testGroupCreation() throws Exception {
     app.getNavigationHelper().goToGroupPage();
-    int before = app.getGroupHelper().getGroupCount();
+
+    int before = app.getNavigationHelper().getElementCount();
     app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
-    int after = app.getGroupHelper().getGroupCount();
+    int after = app.getNavigationHelper().getElementCount();
     Assert.assertEquals(after, before + 1);
   }
 }

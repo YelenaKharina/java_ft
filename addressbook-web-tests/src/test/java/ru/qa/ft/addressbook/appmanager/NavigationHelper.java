@@ -21,11 +21,15 @@ public class NavigationHelper extends BaseHelper {
     click(By.linkText("groups"));
   }
 
-  public void selectElement() {
-    click(By.name("selected[]"));
+  public void selectElement(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public boolean isThereAElement() {
     return isElementPresent(By.name("selected[]"));
+  }
+
+  public int getElementCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }

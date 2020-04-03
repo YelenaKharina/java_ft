@@ -13,13 +13,13 @@ public class GroupModificationTests extends TestBase {
     if (! app.getNavigationHelper().isThereAElement()) {
       app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
     }
-    int before = app.getGroupHelper().getGroupCount();
-    app.getNavigationHelper().selectElement();
+    int before = app.getNavigationHelper().getElementCount();
+    app.getNavigationHelper().selectElement(before - 1);
     app.getGroupHelper().initGroupModification();
-    app.getGroupHelper().fillGroupForm(new GroupData("name1", "header2", "footer3"));
+    app.getGroupHelper().fillGroupForm(new GroupData("new_name", "new_header", "new_footer"));
     app.getGroupHelper().submitGroupModification();
     app.getGroupHelper().returnToGroupPage();
-    int after = app.getGroupHelper().getGroupCount();
-    Assert.assertEquals(after, before);
+    int after = app.getNavigationHelper().getElementCount();
+    Assert.assertEquals(after, before + 1);
   }
 }

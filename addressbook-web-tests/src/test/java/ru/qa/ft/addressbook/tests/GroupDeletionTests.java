@@ -13,11 +13,11 @@ public class GroupDeletionTests extends TestBase {
     if (! app.getNavigationHelper().isThereAElement()) {
       app.getGroupHelper().createGroup(new GroupData("name", "header", "footer"));
     }
-    int before = app.getGroupHelper().getGroupCount();
-    app.getNavigationHelper().selectElement();
+    int before = app.getNavigationHelper().getElementCount();
+    app.getNavigationHelper().selectElement(before - 1); //удалить первую групп (0), удалить последнюю (before - 1)
     app.getGroupHelper().deleteSelectedGroups();
     app.getGroupHelper().returnToGroupPage();
-    int after = app.getGroupHelper().getGroupCount();
-    Assert.assertEquals(after, before - 1);
+    int after = app.getNavigationHelper().getElementCount();
+    Assert.assertEquals(after, before + 1);
   }
 }
