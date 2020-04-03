@@ -19,6 +19,6 @@ public class ContactModificationTests extends TestBase {
     app.getContactHelper().submitContactModification();
     app.getContactHelper().returnToHomePage();
     int after = app.getNavigationHelper().getElementCount();
-    Assert.assertEquals(after, before + 1);
+    Assert.assertEquals(after, before);
   }
 }

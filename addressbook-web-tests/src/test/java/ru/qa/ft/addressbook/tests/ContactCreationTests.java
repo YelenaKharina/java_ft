@@ -4,6 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.qa.ft.addressbook.module.ContactData;
 
+import java.util.List;
+
 public class ContactCreationTests extends TestBase {
 
   @Test
