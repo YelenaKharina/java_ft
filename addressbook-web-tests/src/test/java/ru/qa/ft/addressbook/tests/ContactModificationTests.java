@@ -10,12 +10,12 @@ public class ContactModificationTests extends TestBase {
   public void testContactModification() {
     //проверка существования контактов, при отсутствии контакт создается
     if (! app.getNavigationHelper().isThereAElement()) {
-      app.getContactHelper().createContact(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home", "name1"), true);
+      app.getContactHelper().createContact(new ContactData("firstname", "lastname", "address2", "email", "home", "name1"), true);
     }
     int before = app.getNavigationHelper().getElementCount();
     app.getNavigationHelper().selectElement(0);
     app.getContactHelper().initContactModification();
-    app.getContactHelper().fillContactForm(new ContactData("firstname1", "middlename1", "lastname1", "address1", "email1", "home1", null), false);
+    app.getContactHelper().fillContactForm(new ContactData("firstname1", "lastname1", "address1", "email1", "home1", null), false);
     app.getContactHelper().submitContactModification();
     app.getContactHelper().returnToHomePage();
     int after = app.getNavigationHelper().getElementCount();

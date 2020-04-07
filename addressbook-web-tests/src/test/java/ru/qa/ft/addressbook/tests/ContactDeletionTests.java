@@ -11,7 +11,7 @@ public class ContactDeletionTests extends TestBase {
   public void testContactDeletion() throws Exception {
     //проверка существования контактов, при отсутствии контакт создается
     if (! app.getNavigationHelper().isThereAElement()) {
-      app.getContactHelper().createContact(new ContactData("firstname", "middlename", "lastname", "address2", "email", "home", "name1"), true);
+      app.getContactHelper().createContact(new ContactData("firstname", "lastname", "address2", "email", "home", "name1"), true);
     }
     int before = app.getNavigationHelper().getElementCount();
     app.getNavigationHelper().selectElement(0);
