@@ -3,9 +3,8 @@ package ru.qa.ft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.qa.ft.addressbook.module.ContactData;
-import ru.qa.ft.addressbook.module.GroupData;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 public class ContactDeletionTests extends TestBase {
 
@@ -13,14 +12,18 @@ public class ContactDeletionTests extends TestBase {
   public void testContactDeletion() throws Exception {
     //проверка существования контактов, при отсутствии контакт создается
     if (! app.getNavigationHelper().isThereAElement()) {
-      app.getContactHelper().createContact(new ContactData("firstname", "lastname", "address2", "email", "home", "name"), true);
+      app.getContactHelper().createContact(new ContactData("lastname", "firstname", "address2", "email", "home", "name"), true);
     }
-    int before = app.getContactHelper().getContactCount();
-    app.getNavigationHelper().selectElement(0);
+    List<ContactData> before = app.getContactHelper().getContactList();
+    app.getNavigationHelper().selectElement(before.size() - 1);
     app.getContactHelper().deleteSelectedContacts();
     app.getContactHelper().confirmContactDeletion();
     app.getContactHelper().returnToHomePage();
-    int after = app.getContactHelper().getContactCount();
-    Assert.assertEquals(after, before - 1);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size() - 1);
+
+    before.remove(before.size() - 1);
+    Assert.assertEquals(before, after);
+
   }
 }
