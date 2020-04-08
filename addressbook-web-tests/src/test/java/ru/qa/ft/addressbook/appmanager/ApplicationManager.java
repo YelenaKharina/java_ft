@@ -19,7 +19,6 @@ public class ApplicationManager {
     this.browser = browser;
   }
 
-
   public void init() {
     if (browser.equals(BrowserType.FIREFOX)) {
       wd = new FirefoxDriver();

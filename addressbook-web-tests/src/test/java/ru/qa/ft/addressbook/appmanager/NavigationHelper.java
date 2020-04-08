@@ -29,7 +29,4 @@ public class NavigationHelper extends BaseHelper {
     return isElementPresent(By.name("selected[]"));
   }
 
-  public int getElementCount() {
-    return wd.findElements(By.name("selected[]")).size();
-  }
 }

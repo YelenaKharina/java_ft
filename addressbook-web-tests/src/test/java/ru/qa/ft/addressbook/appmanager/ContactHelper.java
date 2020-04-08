@@ -45,9 +45,11 @@ public class ContactHelper extends BaseHelper {
     //проверяем наличие таблицы
     //если выполняется, то выполняем выход из метода
     //если нет, то совершаем клик для перехода на домашнюю страницу
-    if (isElementPresent(By.id("maintable"))) {
-      return;
-    }
+    //ПРОВЕРКУ УБРАЛА, т.к. тест для удаления контактов падает при подсчете после удаления
+    //после выполнения этого метода с проверкой
+    //if (isElementPresent(By.id("maintable"))) {
+      //return;
+    //}
     click(By.linkText("home"));
   }
 
@@ -72,5 +74,9 @@ public class ContactHelper extends BaseHelper {
     fillContactForm(contact, creation);
     submitContactCreation();
     returnToHomePage();
+  }
+
+  public int getContactCount() {
+    return wd.findElements(By.name("selected[]")).size();
   }
 }
